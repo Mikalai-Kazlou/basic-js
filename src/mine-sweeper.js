@@ -47,13 +47,13 @@ function minesweeper(matrix) {
 
         increse(i, j + 1, maxi, maxj);
         increse(i, j - 1, maxi, maxj);
-        increse(i - 1, j, maxi, maxj);
         increse(i + 1, j, maxi, maxj);
+        increse(i - 1, j, maxi, maxj);
 
-        increse(i - 1, j + 1, maxi, maxj);
-        increse(i - 1, j - 1, maxi, maxj);
         increse(i + 1, j + 1, maxi, maxj);
         increse(i + 1, j - 1, maxi, maxj);
+        increse(i - 1, j + 1, maxi, maxj);
+        increse(i - 1, j - 1, maxi, maxj);
       }
     }
   }
