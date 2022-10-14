@@ -15,8 +15,6 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 
 function transform(arr) {
-  throw new NotImplementedError('Not implemented');
-
   if (!Array.isArray(arr)) {
     throw new Error('\'arr\' parameter must be an instance of the Array!');
   }
@@ -31,10 +29,6 @@ function transform(arr) {
 
   function addValue(prev, curr, next) {
     result.push(curr);
-
-    if (typeof (curr) !== 'number') {
-      return;
-    }
 
     if (prev === cs.dcn) {
       result.pop();
