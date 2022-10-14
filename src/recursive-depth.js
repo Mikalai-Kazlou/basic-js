@@ -16,10 +16,13 @@ class DepthCalculator {
   constructor() {
     this.depth = 0;
     this.level = 0;
-    this.result = 0;
   }
 
   calculateDepth(arr) {
+    if (this.level === 0) {
+      this.depth = 0;
+    }
+
     if (Array.isArray(arr)) {
       this.level += 1;
       this.depth = Math.max(this.depth, this.level);
@@ -27,16 +30,9 @@ class DepthCalculator {
       arr.forEach(item => {
         this.calculateDepth(item);
       });
-    }
 
-    if (Array.isArray(arr)) {
       this.level -= 1;
-      this.result = this.depth;
-    }
-
-    if (!this.level) {
-      this.depth = 0;
-      return this.result;
+      return this.depth;
     }
   }
 }
